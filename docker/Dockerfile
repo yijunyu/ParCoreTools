@@ -26,9 +26,7 @@ RUN cd /ParCoreTools/comdetective_reusetracker_plus/AMD_IBS_Toolkit/driver \
 RUN apt install -y cmake
 RUN apt install -y file
 RUN apt install -y g++
-RUN apt install -y lzma
-RUN apt install -y binutils
-RUN apt install -y libboost-all-dev
-#RUN apt install -y xed2
+RUN apt install -y unzip
+RUN apt install -y bzip2
 RUN cd /ReuseTracker \
  && make
