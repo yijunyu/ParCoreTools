@@ -30,3 +30,5 @@ RUN apt install -y unzip
 RUN apt install -y bzip2
 RUN cd /ReuseTracker \
  && make
+COPY run.sh /ReuseTracker/run.sh
+RUN apt install -y time
