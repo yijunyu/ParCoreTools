@@ -24,5 +24,7 @@ RUN cd /ParCoreTools/comdetective_reusetracker_plus/AMD_IBS_Toolkit \
 RUN cd /ParCoreTools/comdetective_reusetracker_plus/AMD_IBS_Toolkit/driver \
  && ./install_ibs_driver.sh
 RUN apt install -y cmake
+RUN apt install -y file
+RUN apt install -y g++
 RUN cd /ReuseTracker \
  && make
