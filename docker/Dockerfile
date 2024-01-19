@@ -1,0 +1,15 @@
+FROM amd64/ubuntu
+RUN apt update
+RUN apt install -y git
+RUN git clone https://github.com/yijunyu/ReuseTracker
+RUN git clone https://github.com/yijunyu/ParCoreTools
+RUN cd /ParCoreTools/comdetective_reusetracker_plus/AMD_IBS_Toolkit
+RUN apt install -y wget 
+RUN wget https://kernel.ubuntu.com/mainline/v6.1.66/amd64/linux-headers-6.1.66-060166_6.1.66-060166.202312080834_all.deb
+RUN wget https://kernel.ubuntu.com/mainline/v6.1.66/amd64/linux-headers-6.1.66-060166-generic_6.1.66-060166.202312080834_amd64.deb
+RUN wget https://kernel.ubuntu.com/mainline/v6.1.66/amd64/linux-image-unsigned-6.1.66-060166-generic_6.1.66-060166.202312080834_amd64.deb
+RUN wget https://kernel.ubuntu.com/mainline/v6.1.66/amd64/linux-modules-6.1.66-060166-generic_6.1.66-060166.202312080834_amd64.deb
+RUN dpkg -i linux-headers-6.1.66-060166_6.1.66-060166.202312080834_all.deb
+RUN dpkg -i linux-headers-6.1.66-060166-generic_6.1.66-060166.202312080834_amd64.deb
+RUN dpkg -i linux-modules-6.1.66-060166-generic_6.1.66-060166.202312080834_amd64.deb
+RUN dpkg -i linux-image-unsigned-6.1.66-060166-generic_6.1.66-060166.202312080834_amd64.deb
