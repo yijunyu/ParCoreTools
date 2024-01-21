@@ -32,3 +32,8 @@ RUN cd /ReuseTracker \
  && make
 COPY run.sh /ReuseTracker/run.sh
 RUN apt install -y time
+COPY watchpoint_support.c /ReuseTracker/hpctoolkit/src/tool/hpcrun/sample-sources/
+COPY Makefile /ReuseTracker/
+RUN cd ReuseTracker/hpctoolkit \
+ && make \
+ && make install
