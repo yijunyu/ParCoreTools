@@ -1,0 +1,13 @@
+[Unit]
+Description=Restore systemd-resolved resolv.conf symlink
+# This is needed because Docker bind-mounts /etc/resolv.conf so that file ends
+# up in the image instead of what the systemd-resolved package configures.
+Wants=systemd-resolved.service
+Before=network.target
+
+[Service]
+Type=oneshot
+ExecStart=ln -fsv /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
+
+[Install]
+WantedBy=multi-user.target
